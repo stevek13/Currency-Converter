@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
-// new comment
+
 struct ContentView: View {
     
     @State var showExchangeInfo = false
+    @State var leftAmount = ""
+    @State var rightAmount = ""
     
     var body: some View {
         ZStack {
@@ -45,12 +47,15 @@ struct ContentView: View {
                             Text("Silver Piece")
                                 .font(.headline)
                                 .foregroundStyle(Color(.white))
-                            
                         }
+                        .padding(.bottom, -5)
+                        
                         
                         // Text Field
-                        Text("Text field")
-                            .foregroundStyle(.white)
+                        TextField("Amount", text: $leftAmount)
+
+                        .textFieldStyle(.roundedBorder)
+                        
                     }
                     
                     // Equal Sign
@@ -74,12 +79,16 @@ struct ContentView: View {
                                 .frame(width: 33, height: 33)
                             
                         }
-                        //Text Field
-                        Text("Text Field")
-                            .foregroundStyle(.white)
+                        .padding(.bottom, -5)
+                        // Text Field
+                        TextField("Amount", text: $rightAmount)
+                            .textFieldStyle(.roundedBorder)
+                            .multilineTextAlignment(.trailing)
                     }
                 }
-                
+                .padding()
+                .background(.black .opacity(0.5))
+                .clipShape(.capsule)
                 Spacer()
                 
                 // Info Button
