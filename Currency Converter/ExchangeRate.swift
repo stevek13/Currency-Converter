@@ -23,6 +23,7 @@ struct ExchangeRate: View {
                 .frame(height: 33)
             
             // Exchange Rate Text
+            
             Text(text)
             
             // Right Currency Image
